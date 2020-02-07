@@ -7,10 +7,9 @@ const request = require('request');
 router.get('/',  (req, res) => {
     request('http://citibikenyc.com/stations/json', function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body) // Print the google web page.
+            res.send(body)
         }
     })
-    res.send('We are on Login page')
 })
 
 
